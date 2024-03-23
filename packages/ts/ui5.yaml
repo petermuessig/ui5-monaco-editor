@@ -1,0 +1,40 @@
+specVersion: "3.0"
+metadata:
+  name: ui5.monaco.ts
+type: application
+framework:
+  name: OpenUI5
+  version: "1.122.0"
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: themelib_sap_horizon
+customConfiguration:
+  ui5-tooling-modules: &cfgModules
+    addToNamespace: true
+    skipTransform:
+      # we do not transform the monaco-editor files!
+      - "monaco-editor/min/**/*"
+      - "wdio-ui5-service"
+    includeAssets:
+      # we include the monaco-editor files as assets
+      "monaco-editor":
+        - "min/**/*"
+builder:
+  customTasks:
+    - name: ui5-tooling-transpile-task
+      afterTask: replaceVersion
+    - name: ui5-tooling-modules-task
+      afterTask: ui5-tooling-transpile-task
+      configuration:
+        <<: *cfgModules
+server:
+  customMiddleware:
+    - name: ui5-tooling-transpile-middleware
+      afterMiddleware: compression
+    - name: ui5-tooling-modules-middleware
+      afterMiddleware: ui5-tooling-transpile-middleware
+      configuration:
+        <<: *cfgModules
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression

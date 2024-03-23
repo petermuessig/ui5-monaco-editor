@@ -4,10 +4,10 @@
 // shim the monaco-editor to get the exported module
 sap.ui.loader.config({
 	shim: {
-	  "monaco-editor/min/vs/loader": {
-		 exports: "require"
-	   }
-	}
+		"monaco-editor/min/vs/loader": {
+			exports: "require",
+		},
+	},
 });
 
 // define the monaco-editor control

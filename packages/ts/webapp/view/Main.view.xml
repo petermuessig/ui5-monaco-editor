@@ -1,0 +1,10 @@
+<mvc:View
+  controllerName="ui5.monaco.ts.controller.Main"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:c="ui5.monaco.ts.control">
+
+  <c:Editor id="editor" />
+
+</mvc:View>

@@ -1,0 +1,19 @@
+{
+  "generator-ui5-ts-app": {
+    "namespace": "ui5.monaco.ts",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.122.0",
+    "author": "Peter Muessig",
+    "initrepo": false,
+    "tstypes": "@openui5/types",
+    "tstypesVersion": "1.122.0",
+    "appId": "ui5.monaco.ts",
+    "appURI": "ui5/monaco/ts",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "gte1_115_0": true,
+    "setupCompleted": true
+  }
+}
